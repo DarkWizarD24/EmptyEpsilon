@@ -66,6 +66,15 @@ void GuiJumpControls::onUpdate()
     {
         auto adjust = keys.helms_increase_jump_distance.getValue() - keys.helms_decrease_jump_distance.getValue();
         slider->setValue(slider->getValue() + 1000.0f * adjust);
+		
+		float set_value = keys.helms_set_jump_distance.getValue();
+		float set_jump = my_spaceship->jump_drive_min_distance + (my_spaceship->jump_drive_max_distance - my_spaceship->jump_drive_min_distance) * set_value;		
+        if (set_jump != slider->getValue() && (set_value != 0.0f || set_active))
+        {
+            slider->setValue(set_jump);
+            set_active = set_value != 0.0f; //Make sure the next update is send, even if it is back to zero.
+        }
+		
         if (keys.helms_execute_jump.getDown())
             my_spaceship->commandJump(slider->getValue());
     }

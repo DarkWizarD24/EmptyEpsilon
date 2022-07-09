@@ -119,6 +119,7 @@ Keys::Keys() :
     helms_undock("HELMS_UNDOCK"),
     helms_increase_jump_distance("HELMS_JUMP_INCREASE", "RBracket"),
     helms_decrease_jump_distance("HELMS_JUMP_DECREASE", "LBracket"),
+    helms_set_jump_distance("HELMS_SET_JUMP", {"joy:0:axis:2", "gamecontroller:0:axis:triggerleft"}),
     helms_execute_jump("HELMS_JUMP_EXECUTE", "BackSlash"),
     helms_combat_left("HELMS_COMBAT_LEFT"),
     helms_combat_right("HELMS_COMBAT_RIGHT"),
@@ -310,6 +311,7 @@ void Keys::init()
     helms_undock.setLabel(tr("hotkey_menu", "Helms"), tr("hotkey_Helms", "Undock"));
     helms_increase_jump_distance.setLabel(tr("hotkey_menu", "Helms"), tr("hotkey_Helms", "Increase jump distance"));
     helms_decrease_jump_distance.setLabel(tr("hotkey_menu", "Helms"), tr("hotkey_Helms", "Decrease jump distance"));
+    helms_set_jump_distance.setLabel(tr("hotkey_menu", "Helms"), tr("hotkey_Helms", "Set jump distance (joystick)"));
     helms_execute_jump.setLabel(tr("hotkey_menu", "Helms"), tr("hotkey_Helms", "Initiate jump"));
     helms_combat_left.setLabel(tr("hotkey_menu", "Helms"), tr("hotkey_Helms", "Combat boost left"));
     helms_combat_right.setLabel(tr("hotkey_menu", "Helms"), tr("hotkey_Helms", "Combat boost right"));
